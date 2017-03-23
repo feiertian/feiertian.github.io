@@ -10,6 +10,13 @@ To add new posts, simply add a file in the `_posts` directory that follows the c
 
 Jekyll also offers powerful support for code snippets:
 
+<h4>分类列表</h4>  
+    <hr>  
+    {% for category in site.categories %}  
+    <li class="category_list_item"><a href="/showCategory.html?categoryName={{ category | first }}">{{ category | first }}</a> ({{ category | last | size }})  
+    </li>  
+    {% endfor %}  
+    
 {% highlight ruby %}
 def print_hi(name)
   puts "Hi, #{name}"
@@ -23,3 +30,5 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+
